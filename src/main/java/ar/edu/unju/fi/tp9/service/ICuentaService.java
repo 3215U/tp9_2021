@@ -1,8 +1,8 @@
-package ar.edu.unju.fi.tp8.service;
+package ar.edu.unju.fi.tp9.service;
 
 import java.util.List;
 
-import ar.edu.unju.fi.tp8.model.Cuenta;
+import ar.edu.unju.fi.tp9.model.Cuenta;
 
 public interface ICuentaService {
 

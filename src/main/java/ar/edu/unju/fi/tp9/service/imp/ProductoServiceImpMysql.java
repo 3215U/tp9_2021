@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.tp8.service.imp;
+package ar.edu.unju.fi.tp9.service.imp;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.tp8.model.Producto;
-import ar.edu.unju.fi.tp8.repository.IProductoRepository;
-import ar.edu.unju.fi.tp8.service.IProductoService;
+import ar.edu.unju.fi.tp9.model.Producto;
+import ar.edu.unju.fi.tp9.repository.IProductoRepository;
+import ar.edu.unju.fi.tp9.service.IProductoService;
 @Service("productoServiceMysql")
 public class ProductoServiceImpMysql implements IProductoService {
 

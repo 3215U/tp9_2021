@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.tp8.controller;
+package ar.edu.unju.fi.tp9.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

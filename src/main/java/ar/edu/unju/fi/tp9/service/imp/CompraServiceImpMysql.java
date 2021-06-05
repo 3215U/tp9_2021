@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.tp8.service.imp;
+package ar.edu.unju.fi.tp9.service.imp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +9,9 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import ar.edu.unju.fi.tp8.model.Compra;
-import ar.edu.unju.fi.tp8.repository.ICompraRepository;
-import ar.edu.unju.fi.tp8.service.ICompraService;
+import ar.edu.unju.fi.tp9.model.Compra;
+import ar.edu.unju.fi.tp9.repository.ICompraRepository;
+import ar.edu.unju.fi.tp9.service.ICompraService;
 
 @Service("compraServiceMysql")
 public class CompraServiceImpMysql implements ICompraService {

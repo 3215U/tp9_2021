@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.tp8.controller;
+package ar.edu.unju.fi.tp9.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.tp8.service.IClienteService;
-import ar.edu.unju.fi.tp8.model.Compra;
-import ar.edu.unju.fi.tp8.model.Producto;
-import ar.edu.unju.fi.tp8.service.ICompraService;
-import ar.edu.unju.fi.tp8.service.IProductoService;
+import ar.edu.unju.fi.tp9.model.Compra;
+import ar.edu.unju.fi.tp9.model.Producto;
+import ar.edu.unju.fi.tp9.service.IClienteService;
+import ar.edu.unju.fi.tp9.service.ICompraService;
+import ar.edu.unju.fi.tp9.service.IProductoService;
 
 
 
