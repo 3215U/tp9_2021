@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name = "BENEFICIO")
+@Table(name = "BENEFICIOS")
 public class Beneficio {
 
 	@Id
@@ -28,7 +28,7 @@ public class Beneficio {
 	private List<Cliente>Clientes;
 	
 	@NotBlank(message="Debe seleccionar una opcion")
-	@Column(name = "cli_tipoDocumento")
+	@Column(name = "ben_descripcion")
 	private String ben_descripcion;
 	
 	/**
