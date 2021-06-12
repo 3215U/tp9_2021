@@ -35,7 +35,7 @@ public class Producto {
 	private String nombre;
 	
 	@DecimalMin(value = "0.1",message = "El precio debe ser mayor a 0.1")
-	@DecimalMax(value = "1000000",message = "El precio debe ser menor a 1000000")
+	@DecimalMax(value = "1000000",message = "El precio debe ser menor $1000000, osea 7 digitos")
 	@Column(name = "prod_precio")
 	private double precio;
 	
@@ -45,7 +45,7 @@ public class Producto {
 	private String marca;
 	
 	@Min(value = 1,message = "El stock debe ser mayor a 1")
-	@Max(value = 1000,message = "El stock debe ser menor a 1000")
+	@Max(value = 1000,message = "El stock debe ser menor a 1000 productos")
 	@Column(name = "prod_stock")
 	private int stock;
 	
