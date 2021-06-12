@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 		private Long id;
 		
 		@Min(value = 1,message = "La cantidad debe ser mayor o igual a 1 digitos")
-		@Max(value = 1000,message = "La cantidad debe ser menor o igual a 1000 digitos")
+		@Max(value = 1000,message = "La cantidad debe ser menor o igual a 4 digitos, ejemplo '1000' ")
 		@Column(name = "com_cantidad")
 		private int cantidad;
 		
