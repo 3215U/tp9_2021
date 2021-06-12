@@ -25,6 +25,8 @@
 			        <th>Saldo</th>
 			        <th>Fecha de creación</th>
 			        <th>Estado</th>
+			        <th>Beneficios</th>
+			        
 			        <th>Acciones</th>
 			      </tr>
 			    </thead>
@@ -34,6 +36,11 @@
 			    	<td th:text="${cli.cuenta.saldo}"></td>
 			    	<td th:text="${ #temporals.format(cli.cuenta.fechaCreacion, 'dd/MM/yyyy') }"></td>
 			    	<td th:text="${cli.cuenta.estado}"></td>
+					<td><span th:each="ben: ${cli.beneficios}">
+                      <p th:text="${ben.descripcion}"></p>
+                      </span></td>
+		              
+			    	
 			    	<td>
 			    		<!-- Edita por medio del id -->
 			    		<a th:href="@{/cliente-editar-} + ${cli.id}" class="btn btn-warning">Editar</a>
