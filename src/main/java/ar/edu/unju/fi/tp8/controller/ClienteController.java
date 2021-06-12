@@ -1,5 +1,7 @@
 package ar.edu.unju.fi.tp8.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.unju.fi.tp8.model.Beneficio;
 import ar.edu.unju.fi.tp8.model.Cliente;
+import ar.edu.unju.fi.tp8.service.IBeneficioService;
 import ar.edu.unju.fi.tp8.service.IClienteService;
 
 
@@ -30,9 +34,18 @@ public class ClienteController {
 	@Qualifier("clienteServiceMysql")
 	private IClienteService clienteService;
 	
+	@Autowired
+	private IBeneficioService beneficioService;
+	
+	@Autowired 
+	private Beneficio beneficio;
+	
 	@GetMapping("/cliente")
 	public String getClientePage(Model model) {
+		
+		beneficioService.generarBeneficios();
 		model.addAttribute("cliente",cliente);
+		model.addAttribute("listaBeneficios", beneficioService.obtenerBeneficios());
 		return "nuevo-cliente";
 	}
 	
@@ -41,10 +54,24 @@ public class ClienteController {
 		ModelAndView modelView;
 		if(resultadoValidacion.hasErrors()) {
 		modelView= new ModelAndView("nuevo-cliente"); 
+		modelView.addObject("listaBeneficios", beneficioService.obtenerBeneficios());
+
 		return modelView;
 		}
 		
 		else {
+			
+			List<Beneficio> lisBen=new ArrayList<Beneficio>();
+		    for(Beneficio ben: cliente.getBeneficios()) {
+		    	
+		    	lisBen.add(beneficioService.encontrarBeneficio(ben.getId()));
+		    	
+		    }
+		    cliente.setBeneficios(lisBen);
+			clienteService.guardarCliente(cliente);
+			
+			
+			
 		modelView = new ModelAndView("resultado-cliente");
 		clienteService.guardarCliente(cliente);
 		modelView.addObject("clientes",clienteService.obtenerClientes());
@@ -79,6 +106,7 @@ public class ClienteController {
 			//Recuperamos el empleado que se envio de la tabla por id
 			Optional<Cliente> cliente = clienteService.getClientePorId(id);
 			modelView.addObject("cliente", cliente);
+
 			return modelView;
 		}
 		
