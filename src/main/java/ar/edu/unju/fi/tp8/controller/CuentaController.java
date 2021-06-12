@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.fi.tp8.model.Cliente;
 import ar.edu.unju.fi.tp8.model.Cuenta;
+import ar.edu.unju.fi.tp8.service.IBeneficioService;
 import ar.edu.unju.fi.tp8.service.IClienteService;
 import ar.edu.unju.fi.tp8.service.ICuentaService;
 
@@ -33,10 +34,14 @@ public class CuentaController {
 	@Autowired
 	private ICuentaService cuentaService;
 	
+	@Autowired
+	private IBeneficioService beneficioService;
+	
 	@GetMapping("/cuenta")
 	public String getCuentaPage(Model model) {
 		model.addAttribute("cuenta", cuenta);
 		model.addAttribute("cliente", clienteService.obtenerClientes());
+
 		return "editar-cuenta";
 	}
 
