@@ -1,5 +1,6 @@
 package ar.edu.unju.fi.tp8.model;
 
+
 import java.time.LocalDate;
 
 import javax.persistence.Column;
