@@ -4,7 +4,6 @@
 
 * Relación ManyToMany.
 
-## Nuestro trabajo está en desarrollo en la rama development.
 
 ## Integrantes del grupo RCGS: 
 
