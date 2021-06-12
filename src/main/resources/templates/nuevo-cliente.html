@@ -113,7 +113,24 @@
 	                </select>
 	                <!-- Muestra mensajes de error de validación -->
 	                <div class="form-text alert-danger col-md-12 rounded-bottom " th:if="${#fields.hasErrors('cuenta.estado')}" th:errors="*{cuenta.estado}"></div>
-                </div>            	          
+                </div> 
+                
+                <!-- Beneficios -->
+	            <h3 class="h3 pb-3" >Beneficios</h3>
+	            
+				<div class="form-group col-12 col-md-12">
+	                </div>
+	               <div class="form-group col-12 col-md-6">	
+	                <ul>
+	                   <li th:each="ben: ${listaBeneficios}"> 
+                          <input type="checkbox" th:field="*{beneficios}" th:value="${ben.id}"> 
+                          <label class="form-label" th:text="${ben.descripcion}"></label> 
+	                   </li>
+	                </ul>
+	            </div>
+					
+
+                           	          
             	
                 <input class="btn btn-primary" type="submit" value="Guardar">
             </form>
