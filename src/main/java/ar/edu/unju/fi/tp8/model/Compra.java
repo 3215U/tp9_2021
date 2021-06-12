@@ -1,6 +1,4 @@
-package ar.edu.unju.fi.tp9.model;
-
-
+package ar.edu.unju.fi.tp8.model;
 
 import java.util.List;
 

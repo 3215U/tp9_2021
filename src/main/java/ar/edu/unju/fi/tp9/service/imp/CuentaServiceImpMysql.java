@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.tp9.model.Cuenta;
+import ar.edu.unju.fi.tp8.model.Cuenta;
 import ar.edu.unju.fi.tp9.repository.ICuentaRepository;
 import ar.edu.unju.fi.tp9.service.ICuentaService;
 

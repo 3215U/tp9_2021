@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.tp9.model.Compra;
+import ar.edu.unju.fi.tp8.model.Compra;
 import ar.edu.unju.fi.tp9.repository.ICompraRepository;
 import ar.edu.unju.fi.tp9.service.ICompraService;
 

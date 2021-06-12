@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.tp9.model.Producto;
+import ar.edu.unju.fi.tp8.model.Producto;
 import ar.edu.unju.fi.tp9.service.IProductoService;
 
 

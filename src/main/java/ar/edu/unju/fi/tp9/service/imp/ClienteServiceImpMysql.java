@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.tp9.model.Cliente;
+import ar.edu.unju.fi.tp8.model.Cliente;
 import ar.edu.unju.fi.tp9.repository.IClienteRepository;
 import ar.edu.unju.fi.tp9.service.IClienteService;
 @Service("clienteServiceMysql")

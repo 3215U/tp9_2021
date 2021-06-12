@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.tp9.model.Cliente;
-import ar.edu.unju.fi.tp9.model.Cuenta;
+import ar.edu.unju.fi.tp8.model.Cliente;
+import ar.edu.unju.fi.tp8.model.Cuenta;
 import ar.edu.unju.fi.tp9.service.IClienteService;
 import ar.edu.unju.fi.tp9.service.ICuentaService;
 

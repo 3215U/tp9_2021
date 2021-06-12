@@ -1,7 +1,12 @@
-package ar.edu.unju.fi.tp9.model;
+package ar.edu.unju.fi.tp8.model;
 
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -41,7 +46,7 @@ import org.springframework.stereotype.Component;
 		
 		@ManyToMany//ES DE BENEFICIO
 		@JoinTable(name="CLIENTES_BENEFICIOS",joinColumns=@JoinColumn(name="cli_id"),inverseJoinColumns=@JoinColumn(name="ben_id") )
-		private List<Beneficio> beneficios;
+		private List<Beneficio> beneficios = new ArrayList<Beneficio>();
 
 		@Valid
 		@Autowired
@@ -320,6 +325,60 @@ import org.springframework.stereotype.Component;
 		}
 
 
+
+		public int getEdad() {
+			int edad = 0;
+			LocalDate hoy = LocalDate.now();
+			Period periodo = Period.between(this.fechaNacimiento, hoy);
+			edad = periodo.getYears();
+			return edad;
+		}
+		
+		//Método para obtener el tiempo entre la fecha de la última compra y la fecha actual
+		
+		public String getTiempoUltimaCompraHoy() {
+			String texto = ""; 
+			LocalDate hoy = LocalDate.now();
+			Period periodo = Period.between( this.fechaUltimaCompra, hoy);
+			texto = "Año/s: " + periodo.getYears() + " - Mes/es: " + periodo.getMonths() + " - Dia/s: " + periodo.getDays();
+			return texto;
+		}
+		
+		//Método para obtener el tiempo expresado en días desde la fecha de nacimiento hasta la fecha actual 
+		
+		public String getTiempoNacimientoAhoraDias() {
+			String texto = ""; 
+			LocalDate hoy = LocalDate.now();
+			int dias = (int) ChronoUnit.DAYS.between(this.fechaNacimiento, hoy);
+			texto = dias + " dias"; 
+			return texto;
+		}
+		
+		//Método para obtener el tiempo hasta el cumpleaños
+		
+		public String getTiempoHastaCumple() {
+			String texto ="";
+			LocalDate hoy = LocalDate.now();
+			int varanio;
+			if(hoy.getMonthValue() < this.fechaNacimiento.getMonthValue()) {
+				varanio = hoy.getYear();
+			}else {
+				varanio = hoy.getYear()+1;
+			}
+			
+			LocalDate fechaProximoCumple = LocalDate.of(varanio,this.fechaNacimiento.getMonth(),this.fechaNacimiento.getDayOfMonth() );
+	        Period periodo = Period.between(hoy,fechaProximoCumple );
+
+	        texto = "Dias :"+ periodo.getDays() + " - Meses: "+periodo.getMonths() + " - Año: "+ periodo.getYears();
+
+	        LocalDateTime ahora = LocalDateTime.now();
+	        LocalDateTime fechaHoraProxCumple = LocalDateTime.of(varanio,this.fechaNacimiento.getMonth(),this.fechaNacimiento.getDayOfMonth(),0,0,0);
+
+	        Duration duracion = Duration.between(ahora,fechaHoraProxCumple);
+	        texto = texto + " - Horas: "+duracion.toHoursPart() + " - Min: "+duracion.toMinutesPart() + " - Seg: "+duracion.toSecondsPart();
+	        return texto;
+			
+		}
 
 
 }
